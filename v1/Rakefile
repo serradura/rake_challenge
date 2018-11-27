@@ -2,24 +2,34 @@
 
 desc 'soma dois números'
 task :sum, [:a, :b] do |_t, args|
-  puts as_number(args[:a]) + as_number(args[:b])
+  a = as_number(args[:a])
+  b = as_number(args[:b])
+
+  puts a + b
 end
 
 desc 'subtrai dois números'
 task :sub, [:a, :b] do |_t, args|
-  puts as_number(args[:a]) - as_number(args[:b])
+  a = as_number(args[:a])
+  b = as_number(args[:b])
+
+  puts a - b
 end
 
 desc 'multiplica dois números'
 task :mult, [:a, :b] do |_t, args|
-  puts as_number(args[:a]) * as_number(args[:b])
+  a = as_number(args[:a])
+  b = as_number(args[:b])
+
+  puts a * b
 end
 
 desc 'divide dois números'
 task :div, [:a, :b] do |_t, args|
+  a = as_number(args[:a])
   b = as_number(args[:b])
 
-  puts b == 0.0 ? 0.0 : as_number(args[:a]) / b
+  puts b == 0.0 ? 0.0 : a / b
 end
 
 def as_number(value)
