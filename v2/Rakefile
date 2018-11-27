@@ -2,18 +2,17 @@
 
 require_relative 'lib/calc'
 
-def calc(task, args)
-  puts Calc::ComputeTaskResult.call(task, args)
-end
+Print =
+  -> (compute, task, args) { puts compute.call(task, args) }.curry
 
 desc 'soma dois números'
-task(:sum, Calc::PARAMS, &method(:calc))
+task :sum, Calc::PARAMS, &Print.(Calc::ComputeTaskResult)
 
 desc 'subtrai dois números'
-task(:sub, Calc::PARAMS, &method(:calc))
+task :sub, Calc::PARAMS, &Print.(Calc::ComputeTaskResult)
 
 desc 'multiplica dois números'
-task(:mult, Calc::PARAMS, &method(:calc))
+task :mult, Calc::PARAMS, &Print.(Calc::ComputeTaskResult)
 
 desc 'divide dois números'
-task(:div, Calc::PARAMS, &method(:calc))
+task :div, Calc::PARAMS, &Print.(Calc::ComputeTaskResult)
