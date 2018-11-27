@@ -31,5 +31,12 @@ RSpec.describe 'rake', :type => :aruba do
 
       expect(last_command_started).to have_output /1\.0/
     end
+
+    context 'divide por zero' do
+      it 'retorna ZERO' do
+        run('rake div[2,0]')
+        expect(last_command_started).to have_output /0\.0/
+      end
+    end
   end
 end
