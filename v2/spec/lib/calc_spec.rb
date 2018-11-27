@@ -5,6 +5,14 @@ require 'calc'
 RSpec.describe Calc, :type => :lib do
   subject { described_class.new(args) }
 
+  context 'custom params' do
+    subject { described_class.new(args, params: [:x, :y]) }
+
+    let(:args) { {x: '3', y: '3'} }
+
+    it { expect(subject.sum).to be == 6.0 }
+  end
+
   context '#sum' do
     let(:args) { {a: '2', b: '2'} }
 

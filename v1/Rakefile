@@ -31,10 +31,8 @@ task :div, CALC_PARAMS do |_t, args|
 end
 
 def fetch_numbers(args)
-  [
-    as_number(args[:a]),
-    as_number(args[:b]),
-  ]
+  CALC_PARAMS
+    .map { |param| as_number(args[param]) }
 end
 
 def as_number(value)

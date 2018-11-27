@@ -5,7 +5,7 @@ require_relative 'lib/calc'
 CALC_PARAMS = [:a, :b]
 
 def calc(task, args)
-  puts Calc.new(args).public_send(task.name)
+  puts Calc.new(args, params: CALC_PARAMS).public_send(task.name)
 end
 
 desc 'soma dois números'

@@ -1,9 +1,10 @@
 # frozen_string_literal: true
 
 class Calc
-  def initialize(args)
-    @a = as_number(args[:a])
-    @b = as_number(args[:b])
+  def initialize(args, params: [:a, :b])
+    @a, @b = Array(params).map do |param|
+               as_number(args[param])
+             end
   end
 
   def sum
