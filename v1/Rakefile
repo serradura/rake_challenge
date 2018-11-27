@@ -2,22 +2,26 @@
 
 desc 'soma dois números'
 task :sum, [:a, :b] do |_t, args|
-  puts args[:a].to_f + args[:b].to_f
+  puts as_number(args[:a]) + as_number(args[:b])
 end
 
 desc 'subtrai dois números'
 task :sub, [:a, :b] do |_t, args|
-  puts args[:a].to_f - args[:b].to_f
+  puts as_number(args[:a]) - as_number(args[:b])
 end
 
 desc 'multiplica dois números'
 task :mult, [:a, :b] do |_t, args|
-  puts args[:a].to_f * args[:b].to_f
+  puts as_number(args[:a]) * as_number(args[:b])
 end
 
 desc 'divide dois números'
 task :div, [:a, :b] do |_t, args|
-  b = args[:b].to_f
+  b = as_number(args[:b])
 
-  puts b == 0.0 ? 0.0 : args[:a].to_f / b
+  puts b == 0.0 ? 0.0 : as_number(args[:a]) / b
+end
+
+def as_number(value)
+  value.to_f
 end
