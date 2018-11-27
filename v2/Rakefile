@@ -3,7 +3,7 @@
 require_relative 'lib/calc'
 
 def calc(task, args)
-  puts Calc::Operations.new(args).public_send(task.name)
+  puts Calc::ComputeTaskResult.call(task, args)
 end
 
 desc 'soma dois números'
