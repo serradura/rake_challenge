@@ -1,28 +1,30 @@
 # frozen_string_literal: true
 
+CALC_PARAMS = [:a, :b]
+
 desc 'soma dois números'
-task :sum, [:a, :b] do |_t, args|
+task :sum, CALC_PARAMS do |_t, args|
   a, b = fetch_numbers(args)
 
   puts a + b
 end
 
 desc 'subtrai dois números'
-task :sub, [:a, :b] do |_t, args|
+task :sub, CALC_PARAMS do |_t, args|
   a, b = fetch_numbers(args)
 
   puts a - b
 end
 
 desc 'multiplica dois números'
-task :mult, [:a, :b] do |_t, args|
+task :mult, CALC_PARAMS do |_t, args|
   a, b = fetch_numbers(args)
 
   puts a * b
 end
 
 desc 'divide dois números'
-task :div, [:a, :b] do |_t, args|
+task :div, CALC_PARAMS do |_t, args|
   a, b = fetch_numbers(args)
 
   puts b == 0.0 ? 0.0 : a / b

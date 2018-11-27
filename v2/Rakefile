@@ -2,18 +2,20 @@
 
 require_relative 'lib/calc'
 
+CALC_PARAMS = [:a, :b]
+
 def calc(task, args)
   puts Calc.new(args).public_send(task.name)
 end
 
 desc 'soma dois números'
-task(:sum, [:a, :b], &method(:calc))
+task(:sum, CALC_PARAMS, &method(:calc))
 
 desc 'subtrai dois números'
-task(:sub, [:a, :b], &method(:calc))
+task(:sub, CALC_PARAMS, &method(:calc))
 
 desc 'multiplica dois números'
-task(:mult, [:a, :b], &method(:calc))
+task(:mult, CALC_PARAMS, &method(:calc))
 
 desc 'divide dois números'
-task(:div, [:a, :b], &method(:calc))
+task(:div, CALC_PARAMS, &method(:calc))
