@@ -1,0 +1,6 @@
+# frozen_string_literal: true
+
+desc 'soma dois números'
+task :sum, [:a, :b] do |_t, args|
+  puts args[:a].to_f + args[:b].to_f
+end
