@@ -1,0 +1,21 @@
+# frozen_string_literal: true
+
+desc 'soma dois números'
+task :sum, [:a, :b] do |_t, args|
+  puts args[:a].to_f + args[:b].to_f
+end
+
+desc 'subtrai dois números'
+task :sub, [:a, :b] do |_t, args|
+  puts args[:a].to_f - args[:b].to_f
+end
+
+desc 'multiplica dois números'
+task :mult, [:a, :b] do |_t, args|
+  puts args[:a].to_f * args[:b].to_f
+end
+
+desc 'divide dois números'
+task :div, [:a, :b] do |_t, args|
+  puts args[:a].to_f / args[:b].to_f
+end
