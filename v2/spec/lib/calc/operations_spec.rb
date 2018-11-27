@@ -2,7 +2,7 @@ require 'spec_helper'
 
 require 'calc'
 
-RSpec.describe Calc, :type => :lib do
+RSpec.describe Calc::Operations, :type => :lib do
   subject { described_class.new(args) }
 
   context 'custom params' do
