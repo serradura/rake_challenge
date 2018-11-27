@@ -2,26 +2,18 @@
 
 require_relative 'lib/calc'
 
-desc 'soma dois números'
-task :sum, [:a, :b] do |task, args|
-  puts calc(args, task)
+def calc(task, args)
+  puts Calc.new(args).public_send(task.name)
 end
+
+desc 'soma dois números'
+task(:sum, [:a, :b], &method(:calc))
 
 desc 'subtrai dois números'
-task :sub, [:a, :b] do |task, args|
-  puts calc(args, task)
-end
+task(:sub, [:a, :b], &method(:calc))
 
 desc 'multiplica dois números'
-task :mult, [:a, :b] do |task, args|
-  puts calc(args, task)
-end
+task(:mult, [:a, :b], &method(:calc))
 
 desc 'divide dois números'
-task :div, [:a, :b] do |task, args|
-  puts calc(args, task)
-end
-
-def calc(args, task)
-  Calc.new(args).public_send(task.name)
-end
+task(:div, [:a, :b], &method(:calc))
