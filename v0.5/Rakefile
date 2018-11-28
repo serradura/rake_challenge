@@ -1,0 +1,31 @@
+# frozen_string_literal: true
+
+CALC_PARAMS = [:a, :b]
+
+desc 'soma dois números'
+task :sum, CALC_PARAMS do |_t, args|
+  a, b = CALC_PARAMS.map { |param| args[param].to_f }
+
+  puts a + b
+end
+
+desc 'subtrai dois números'
+task :sub, CALC_PARAMS do |_t, args|
+  a, b = CALC_PARAMS.map { |param| args[param].to_f }
+
+  puts a - b
+end
+
+desc 'multiplica dois números'
+task :mult, CALC_PARAMS do |_t, args|
+  a, b = CALC_PARAMS.map { |param| args[param].to_f }
+
+  puts a * b
+end
+
+desc 'divide dois números'
+task :div, CALC_PARAMS do |_t, args|
+  a, b = CALC_PARAMS.map { |param| args[param].to_f }
+
+  puts b == 0.0 ? 0.0 : a / b
+end
