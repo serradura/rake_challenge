@@ -1,0 +1,23 @@
+# frozen_string_literal: true
+
+require_relative 'lib/calc'
+
+desc 'soma dois números'
+task :sum, Calc::PARAMS do |task, args|
+  puts Calc.compute_task_result(task, args)
+end
+
+desc 'subtrai dois números'
+task :sub, Calc::PARAMS do |task, args|
+  puts Calc.compute_task_result(task, args)
+end
+
+desc 'multiplica dois números'
+task :mult, Calc::PARAMS do |task, args|
+  puts Calc.compute_task_result(task, args)
+end
+
+desc 'divide dois números'
+task :div, Calc::PARAMS do |task, args|
+  puts Calc.compute_task_result(task, args)
+end
